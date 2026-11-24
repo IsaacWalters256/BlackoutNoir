@@ -14,6 +14,17 @@ script = ExtResource("1_q0j4n")
 
 [node name="BackEnemy" type="Parallax2D" parent="."]
 
+[node name="NextRoomButton" type="TextureButton" parent="BackEnemy"]
+offset_left = 491.0
+offset_top = 159.0
+offset_right = 605.0
+offset_bottom = 318.0
+
+[node name="NextRoomSprite" type="Sprite2D" parent="BackEnemy"]
+position = Vector2(560, 230)
+scale = Vector2(0.909424, 1.28272)
+texture = ExtResource("2_7g0f2")
+
 [node name="BackSprite" type="Sprite2D" parent="BackEnemy"]
 position = Vector2(513, 272.094)
 scale = Vector2(0.909424, 1.28272)
@@ -174,6 +185,21 @@ texture = ExtResource("2_7g0f2")
 position = Vector2(1102, 46.0001)
 scale = Vector2(0.645508, 0.560547)
 texture = ExtResource("2_7g0f2")
+
+[node name="MovesLabel" type="Label" parent="UI"]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 89.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 51
+text = "32"
+
+[node name="PreviousRoomButton" type="Button" parent="UI"]
+offset_left = 405.0
+offset_top = 583.0
+offset_right = 626.0
+offset_bottom = 638.0
+text = "Previous Room"
 
 [node name="Blackout" type="Sprite2D" parent="."]
 visible = false

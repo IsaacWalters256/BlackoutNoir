@@ -5,6 +5,7 @@ var partner_inv = []#partner only ever holds stuff you throw him and throws you 
 var current_item = "none"
 @onready var pauser = get_parent().get_node("Pauser")
 
+var total_moves = []
 var driving_locations = []
 
 var moves = 0
@@ -22,10 +23,13 @@ func new_game(t_state=0):
 		t.tween_property(get_node("Blackout"),"modulate",Color(0,0,0,0),0.5)
 		t.tween_callback(self.new_game.bind(1)).set_delay(0.2)
 	else:
-		moves = 10#for gearing up in office
+		update_moves(10)
 		player_input(true)
 
+
+
 func player_input(now_active):
+	get_node("UI/MovesLabel").text = str(moves)
 	print("switch player input")
 	if now_active:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -45,7 +49,7 @@ func toggle_room_buttons(now_active):
 func new_move(button_pressed):
 	print("new move")
 	toggle_room_buttons(false)
-	moves = moves - 1
+	update_moves(-1)
 	#if button id is enemy left
 	#what is that enemy? is it a friendly npc that hazel talks with?
 	#does he go up and punch that enemy or use his item?
@@ -64,6 +68,11 @@ func moves_check():
 		#else:
 		#	to_driving()
 
+func update_moves(adding_amount):
+	moves = moves + adding_amount
+	get_node("UI/MovesLabel").text = "Adrenaline: " + str(moves)
+	
+
 func enemy_turn():
 	print("enemy turn")
 	pass
@@ -79,13 +88,13 @@ func player_blackout(t_state=0):
 	else:
 		pass
 
-func player_death(t_state=0):
-	print("death")
-	if t_state == 0:
-		var t = pauser.get_tween(self)
-		t.tween_callback(self.new_game.bind(1)).set_delay(0.2)
-	else:
-		end_game()
+#func player_death(t_state=0):
+	#print("death")
+	#if t_state == 0:
+		#var t = pauser.get_tween(self)
+		#t.tween_callback(self.new_game.bind(1)).set_delay(0.2)
+	#else:
+		#end_game()
 
 func player_no_clues(t_state=0):
 	print("no clues")
@@ -102,3 +111,26 @@ func end_game(t_state=0):
 		t.tween_callback(self.new_game.bind(1)).set_delay(0.2)
 	else:
 		pass
+
+
+var enemies = {
+	"bruiser": {#for the stats and stuff
+		
+	}
+}
+
+var items = {
+	
+}
+
+#this is also clues basically, kind of just cutscenes and sprites for the driving part?knows the subrooms
+#have a been here value so the game doens't hand out the location a second time
+var locations = {
+	
+}
+
+var rooms = {
+	"HazelOffice": {
+		"BackButton": []#pick random from this array
+	}
+}
