@@ -1,0 +1,186 @@
+[gd_scene load_steps=3 format=3 uid="uid://1fwe2ub5ulja"]
+
+[ext_resource type="Script" uid="uid://2jv0yea1y2dg" path="res://NC/game.gd" id="1_q0j4n"]
+[ext_resource type="Texture2D" uid="uid://sc62oehr3m4a" path="res://icon.svg" id="2_7g0f2"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_q0j4n")
+
+[node name="DriveBack" type="Node2D" parent="."]
+
+[node name="StaticBack" type="Node2D" parent="."]
+
+[node name="WallObjects" type="Parallax2D" parent="."]
+
+[node name="BackEnemy" type="Parallax2D" parent="."]
+
+[node name="BackSprite" type="Sprite2D" parent="BackEnemy"]
+position = Vector2(513, 272.094)
+scale = Vector2(0.909424, 1.28272)
+texture = ExtResource("2_7g0f2")
+
+[node name="BackFloorButton" type="TextureButton" parent="BackEnemy"]
+offset_left = 431.0
+offset_top = 306.094
+offset_right = 607.0
+offset_bottom = 352.094
+
+[node name="BackButton" type="TextureButton" parent="BackEnemy"]
+offset_left = 457.0
+offset_top = 193.094
+offset_right = 571.0
+offset_bottom = 352.094
+
+[node name="MainEnemy" type="Parallax2D" parent="."]
+
+[node name="LeftSprite" type="Sprite2D" parent="MainEnemy"]
+position = Vector2(371, 306.375)
+scale = Vector2(1.09082, 1.61523)
+texture = ExtResource("2_7g0f2")
+
+[node name="LeftButton" type="TextureButton" parent="MainEnemy"]
+offset_left = 306.0
+offset_top = 206.375
+offset_right = 438.0
+offset_bottom = 406.375
+
+[node name="LeftFloorButton" type="TextureButton" parent="MainEnemy"]
+offset_left = 269.0
+offset_top = 347.375
+offset_right = 466.0
+offset_bottom = 407.375
+
+[node name="RightSprite" type="Sprite2D" parent="MainEnemy"]
+position = Vector2(802, 303.375)
+scale = Vector2(1.09082, 1.61523)
+texture = ExtResource("2_7g0f2")
+
+[node name="RightButton" type="TextureButton" parent="MainEnemy"]
+offset_left = 731.0
+offset_top = 203.375
+offset_right = 868.0
+offset_bottom = 404.375
+
+[node name="RightFloorButton" type="TextureButton" parent="MainEnemy"]
+offset_left = 698.0
+offset_top = 336.0
+offset_right = 895.0
+offset_bottom = 405.0
+
+[node name="MidSprite" type="Sprite2D" parent="MainEnemy"]
+position = Vector2(592, 348)
+scale = Vector2(1.64062, 0.90918)
+texture = ExtResource("2_7g0f2")
+
+[node name="MidButton" type="TextureButton" parent="MainEnemy"]
+offset_left = 492.0
+offset_top = 295.0
+offset_right = 694.0
+offset_bottom = 403.0
+
+[node name="LampSprite" type="Sprite2D" parent="MainEnemy"]
+position = Vector2(590, 43)
+scale = Vector2(0.72656, 0.32959)
+texture = ExtResource("2_7g0f2")
+
+[node name="LampButton" type="TextureButton" parent="MainEnemy"]
+offset_left = 546.0
+offset_top = 25.0
+offset_right = 634.0
+offset_bottom = 65.0
+
+[node name="Desks" type="Parallax2D" parent="."]
+
+[node name="FrontSprite" type="Sprite2D" parent="Desks"]
+position = Vector2(638, 323)
+scale = Vector2(1.22034, 1.9148)
+texture = ExtResource("2_7g0f2")
+
+[node name="FrontButton" type="TextureButton" parent="Desks"]
+offset_left = 566.0
+offset_top = 205.0
+offset_right = 711.0
+offset_bottom = 442.0
+
+[node name="FrontFloorButton" type="TextureButton" parent="Desks"]
+offset_left = 523.0
+offset_top = 371.0
+offset_right = 749.0
+offset_bottom = 445.0
+
+[node name="Player" type="Parallax2D" parent="."]
+
+[node name="HazelPocket" type="Sprite2D" parent="Player"]
+position = Vector2(44, 420)
+scale = Vector2(2.36255, 3.74951)
+texture = ExtResource("2_7g0f2")
+
+[node name="HazelDialog" type="Sprite2D" parent="Player"]
+position = Vector2(-141, 138)
+scale = Vector2(1.83057, 1.2959)
+texture = ExtResource("2_7g0f2")
+
+[node name="PartnerPocket" type="Sprite2D" parent="Player"]
+position = Vector2(1028.69, 418.875)
+scale = Vector2(2.16113, 3.95117)
+texture = ExtResource("2_7g0f2")
+
+[node name="HazelHeld" type="Sprite2D" parent="Player"]
+position = Vector2(226, 463)
+scale = Vector2(0.835938, 1.83472)
+texture = ExtResource("2_7g0f2")
+
+[node name="Foreground" type="Parallax2D" parent="."]
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="NextItem3" type="Sprite2D" parent="UI"]
+position = Vector2(-129, 306)
+scale = Vector2(0.632813, 0.5625)
+texture = ExtResource("2_7g0f2")
+
+[node name="NextItem2" type="Sprite2D" parent="UI"]
+position = Vector2(-160, 405)
+scale = Vector2(0.632813, 0.5625)
+texture = ExtResource("2_7g0f2")
+
+[node name="NextItem1" type="Sprite2D" parent="UI"]
+position = Vector2(-117, 586)
+scale = Vector2(0.632813, 0.5625)
+texture = ExtResource("2_7g0f2")
+
+[node name="NextItem4" type="Sprite2D" parent="UI"]
+position = Vector2(1355, 171)
+scale = Vector2(0.632813, 0.5625)
+texture = ExtResource("2_7g0f2")
+
+[node name="NextItem5" type="Sprite2D" parent="UI"]
+position = Vector2(1294, 274)
+scale = Vector2(0.632813, 0.5625)
+texture = ExtResource("2_7g0f2")
+
+[node name="NextItem6" type="Sprite2D" parent="UI"]
+position = Vector2(1343, 497)
+scale = Vector2(0.632813, 0.5625)
+texture = ExtResource("2_7g0f2")
+
+[node name="DialogAreaIfSelected" type="Sprite2D" parent="UI"]
+visible = false
+position = Vector2(557, 534)
+scale = Vector2(4.15332, 1.4834)
+texture = ExtResource("2_7g0f2")
+
+[node name="Settings" type="Sprite2D" parent="UI"]
+position = Vector2(1102, 46.0001)
+scale = Vector2(0.645508, 0.560547)
+texture = ExtResource("2_7g0f2")
+
+[node name="Blackout" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+position = Vector2(580, 317.5)
+scale = Vector2(10.0625, 5.96094)
+texture = ExtResource("2_7g0f2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 324)
