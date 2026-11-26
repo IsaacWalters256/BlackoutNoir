@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://1fwe2ub5ulja"]
+[gd_scene load_steps=5 format=3 uid="uid://1fwe2ub5ulja"]
 
 [ext_resource type="Script" uid="uid://2jv0yea1y2dg" path="res://NC/game.gd" id="1_q0j4n"]
 [ext_resource type="Texture2D" uid="uid://sc62oehr3m4a" path="res://icon.svg" id="2_7g0f2"]
+[ext_resource type="Texture2D" uid="uid://cc8akopjtcmja" path="res://Art/Spells (48x48).png" id="3_ned6j"]
+[ext_resource type="Texture2D" uid="uid://cg5lq44ixt248" path="res://Art/Spells (48x48) BlackWhite.png" id="4_e8ysp"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_q0j4n")
@@ -187,10 +189,10 @@ scale = Vector2(0.645508, 0.560547)
 texture = ExtResource("2_7g0f2")
 
 [node name="MovesLabel" type="Label" parent="UI"]
-offset_left = 16.0
-offset_top = 8.0
-offset_right = 89.0
-offset_bottom = 78.0
+offset_left = 17.0
+offset_top = 7.0
+offset_right = 90.0
+offset_bottom = 77.0
 theme_override_font_sizes/font_size = 51
 text = "32"
 
@@ -200,6 +202,18 @@ offset_top = 583.0
 offset_right = 626.0
 offset_bottom = 638.0
 text = "Previous Room"
+
+[node name="Spells(48x48)" type="Sprite2D" parent="UI"]
+position = Vector2(825, 50)
+texture = ExtResource("3_ned6j")
+hframes = 11
+vframes = 20
+
+[node name="Spells(48x48)2" type="Sprite2D" parent="UI"]
+position = Vector2(889, 52)
+texture = ExtResource("4_e8ysp")
+hframes = 11
+vframes = 20
 
 [node name="Blackout" type="Sprite2D" parent="."]
 visible = false

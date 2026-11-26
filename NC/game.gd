@@ -3,12 +3,16 @@ extends Node2D
 var player_inv = []
 var partner_inv = []#partner only ever holds stuff you throw him and throws you something when your hand is empty
 var current_item = "none"
+var current_room = "HazelOffice"
 @onready var pauser = get_parent().get_node("Pauser")
 
 var total_moves = []
 var driving_locations = []
 
 var moves = 0
+
+func _ready() -> void:
+	get_node("Blackout").visible = true
 
 func start(load_data):
 	player_input(false)
@@ -17,8 +21,8 @@ func start(load_data):
 
 func new_game(t_state=0):
 	print("new game")
-	get_node("Blackout").visible = true
 	if t_state == 0:
+		
 		var t = pauser.get_tween(self)
 		t.tween_property(get_node("Blackout"),"modulate",Color(0,0,0,0),0.5)
 		t.tween_callback(self.new_game.bind(1)).set_delay(0.2)
@@ -29,7 +33,6 @@ func new_game(t_state=0):
 
 
 func player_input(now_active):
-	get_node("UI/MovesLabel").text = str(moves)
 	print("switch player input")
 	if now_active:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -79,6 +82,9 @@ func enemy_turn():
 
 #func _process(delta: float) -> void:
 #	pass
+
+func load_room():
+	pass
 
 func player_blackout(t_state=0):
 	print("blaack out")
